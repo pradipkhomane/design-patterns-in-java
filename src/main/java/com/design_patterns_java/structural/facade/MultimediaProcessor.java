@@ -1,5 +1,6 @@
 package com.design_patterns_java.structural.facade;
 
+// Facade class
 public class MultimediaProcessor {
     private final AudioDecoder audioDecoder;
 
@@ -12,6 +13,7 @@ public class MultimediaProcessor {
         imageDecoder = new ImageDecoder();
         videoDecoder = new VideoDecoder();
     }
+
 
     public void processMultimediaFile(String filePath) {
         FileType fileType = getFileType(filePath);
@@ -32,8 +34,11 @@ public class MultimediaProcessor {
         }
     }
 
+    // Method to determine the file type based on file extension
     public FileType getFileType(String filePath) {
+        // Extract file extension from file path
         String extension = filePath.substring(filePath.lastIndexOf('.') + 1).toLowerCase();
+        // Determine file type based on extension
         return switch (extension) {
             case "jpg", "png" -> FileType.IMAGE;
             case "mp3", "wav" -> FileType.AUDIO;

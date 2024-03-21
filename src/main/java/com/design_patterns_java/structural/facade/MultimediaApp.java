@@ -1,12 +1,15 @@
 package com.design_patterns_java.structural.facade;
 
+// Client code
 public class MultimediaApp {
     public static void main(String[] args) {
-        MultimediaProcessor multimediaProcessor = new MultimediaProcessor();
+        // Client interacts with the MultimediaProcessor facade
+        MultimediaProcessor processor = new MultimediaProcessor();
 
-        multimediaProcessor.processMultimediaFile("sample.jpg");
-        multimediaProcessor.processMultimediaFile("sample.mp3");
-        multimediaProcessor.processMultimediaFile("sample.mp4");
-        multimediaProcessor.processMultimediaFile("sample.txt");
+        // Process various multimedia files
+        processor.processMultimediaFile("sample.jpg");   // Image file
+        processor.processMultimediaFile("sample.mp4");   // Video file
+        processor.processMultimediaFile("sample.mp3");   // Audio file
+        processor.processMultimediaFile("sample.txt");   // Unsupported file format
     }
 }
