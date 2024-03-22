@@ -1,7 +1,7 @@
 package com.design_patterns_java.structural.facade;
 
 // Client code
-public class MultimediaApp {
+public class Main {
     public static void main(String[] args) {
         // Client interacts with the MultimediaProcessor facade
         MultimediaProcessor processor = new MultimediaProcessor();
